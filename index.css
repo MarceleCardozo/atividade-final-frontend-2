@@ -24,7 +24,7 @@
   border-radius: 10px;
   border: solid 2px;
   border-color: gainsboro;
-  padding-right: 30px; /* Ajuste o valor conforme necessário para deixar espaço para o ícone */
+  padding-right: 30px;
 }
 
 .input-container button {
@@ -48,4 +48,9 @@
 #image-rick-and-morty{
   width: 25%;
   height: 25%;
+}
+
+#image-rick-and-morty-header {
+  width: 5%;
+  height: 5%;
 }
