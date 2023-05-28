@@ -5,4 +5,43 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 50px;
+  margin-top: 75px;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-container {
+  position: relative;
+  display: inline-flex;
+}
+
+#search-bar {
+  width: 450px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid 2px;
+  border-color: gainsboro;
+  padding-right: 30px; /* Ajuste o valor conforme necessário para deixar espaço para o ícone */
+}
+
+.input-container button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#search-bar::placeholder {
+  color: gainsboro;
+}
+
+.custom-icon {
+  color: rgb(7, 151, 7)
+}
+
