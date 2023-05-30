@@ -59,6 +59,45 @@
   height: 5%;
 }
 
+.containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 70px;
+}
+
+.card {
+  width: calc(50% - 20px);
+  margin-bottom: 50px;
+  margin-top: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.card img {
+  height: 130px;
+}
+
+.card div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.card span.title {
+  font-weight: bold;
+}
+
+.greenHr {
+  height: 2px;
+  background-color: green;
+  border: none;
+  margin: 10px 0;
+  width: 100%;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -73,7 +112,7 @@ footer {
   font-family: sans-serif;
 }
 .footer-list {
-  display: flex; 
+  display: flex;
   justify-content: center;
   list-style-type: none;
   padding: 0;

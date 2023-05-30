@@ -14,21 +14,25 @@ function search(event) {
     })
     .then((response) => {
       const filteredCharacters = response.data.results;
-      let cards = document.getElementById("containerCards");
+      let cards = document.querySelector(".containerCards");
       cards.innerHTML = "";
 
-      filteredCharacters.forEach((character) => {
+      filteredCharacters.forEach((character, index) => {
         cards.innerHTML += `
-          <div>
+          <div class="card">
             <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
-          </div>
-          <div>
-            <a href="">${character.name}</a>
-            <span>${character.status} ${character.species}</span>
+            <div>
+              <span class="title">${character.name}</span> 
+              <span>${character.status} ${character.species}</span>
+            </div>
           </div>
         `;
-      });
-
+      
+        if ((index + 1) % 2 === 0 && index !== filteredCharacters.length - 1) {
+          cards.innerHTML += `<hr class="greenHr"/>`;
+        }
+      });      
+      
       console.log(filteredCharacters);
     })
     .catch((error) => {
