@@ -13,10 +13,20 @@ function search(event) {
       params: { name: searchBarValue },
     })
     .then((response) => {
-      const filteredCharacters = response.data.results.filter((character) => {
-        return character.name
-          .toLowerCase()
-          .includes(searchBarValue.toLowerCase());
+      const filteredCharacters = response.data.results;
+      let cards = document.getElementById("containerCards");
+      cards.innerHTML = "";
+
+      filteredCharacters.forEach((character) => {
+        cards.innerHTML += `
+          <div>
+            <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
+          </div>
+          <div>
+            <a href="">${character.name}</a>
+            <span>${character.status} ${character.species}</span>
+          </div>
+        `;
       });
 
       console.log(filteredCharacters);
