@@ -49,9 +49,16 @@
   color: rgb(7, 151, 7);
 }
 
+.containerImage {
+  display: flex;
+  justify-content: center;
+}
+
 #image-rick-and-morty {
   width: 25%;
   height: 25%;
+  padding-bottom: 240px;
+  padding-top: 30px;
 }
 
 #image-rick-and-morty-header {
@@ -92,7 +99,7 @@
 
 .greenHr {
   height: 2px;
-  background-color:rgb(163, 230, 163) ;
+  background-color: rgb(163, 230, 163);
   border: none;
   margin: 10px 0;
   width: 100%;
