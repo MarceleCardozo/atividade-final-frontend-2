@@ -8,10 +8,13 @@ function search(event) {
 
   let searchBarValue = document.getElementById("search-bar").value;
 
+  let apiUrl = "https://rickandmortyapi.com/api/character";
+  if (searchBarValue) {
+    apiUrl += "?name=" + searchBarValue;
+  }
+
   api
-    .get("https://rickandmortyapi.com/api/character", {
-      params: { name: searchBarValue },
-    })
+    .get(apiUrl)
     .then((response) => {
       const filteredCharacters = response.data.results;
       let cards = document.querySelector(".containerCards");
@@ -27,15 +30,18 @@ function search(event) {
             </div>
           </div>
         `;
-      
+
         if ((index + 1) % 2 === 0 && index !== filteredCharacters.length - 1) {
           cards.innerHTML += `<hr class="greenHr"/>`;
         }
-      });      
-      
+      });
+
       console.log(filteredCharacters);
     })
     .catch((error) => {
       console.log(error);
     });
 }
+
+// Carregar todos os personagens quando a página for carregada
+document.addEventListener("DOMContentLoaded", search);
