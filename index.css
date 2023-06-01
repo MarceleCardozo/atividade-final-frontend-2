@@ -99,10 +99,38 @@
 
 .greenHr {
   height: 2px;
-  background-color: rgb(163, 230, 163);
+  background-color:rgb(163, 230, 163) ;
   border: none;
   margin: 10px 0;
   width: 100%;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-container button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background-color: #0c640c;
+  margin-left: 10px;
+}
+
+.pagination-container button:hover {
+  background-color: #00cc00;
+}
+
+.pagination-container button:active {
+  background-color: #009900;
 }
 
 footer {
