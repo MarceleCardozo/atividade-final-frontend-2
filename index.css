@@ -73,13 +73,31 @@
   padding: 30px 70px;
 }
 
+.statusColor {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.green-status {
+  background-color: #56CD42;
+}
+
+.red-status {
+  background-color: #CD4242;
+}
+
+.gray-status {
+  background-color: #BBBBBB;
+}
+
 .card {
   width: calc(50% - 20px);
   margin-bottom: 50px;
   margin-top: 50px;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .card img {
@@ -91,15 +109,18 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card span.title {
   font-weight: bold;
+  color: #0c640c;
+  font-size: 20px;
 }
 
 .greenHr {
   height: 2px;
-  background-color:rgb(163, 230, 163) ;
+  background-color: rgb(163, 230, 163);
   border: none;
   margin: 10px 0;
   width: 100%;

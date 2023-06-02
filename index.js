@@ -28,15 +28,30 @@ function search(event) {
       cards.innerHTML = "";
 
       filteredCharacters.forEach((character, index) => {
+        let statusColorClass = ""; // Declare the statusColorClass variable
+
+        if (character.status === "Alive") {
+          statusColorClass = "green-status";
+        } else if (character.status === "Dead") {
+          statusColorClass = "red-status";
+        } else {
+          statusColorClass = "gray-status";
+        }
+
         cards.innerHTML += `
-          <div class="card">
-            <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
-            <div>
-              <span class="title">${character.name}</span> 
-              <span>${character.status} ${character.species}</span>
-            </div>
+        <div class="card">
+          <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
+          <div>
+            <span class="title">${character.name}</span> 
+            <div class="statusColor ${statusColorClass}"></div> <!-- Add the statusColorClass to the div -->
+            <span>${character.status} - ${character.species}</span>
+            <p>Última localização conhecida</p>
+            <span>${character.location.name}</span>
+            <p>Visto a última vez em:</p>
+            <span>${character.episode}</span>
           </div>
-        `;
+        </div>
+      `;
 
         if ((index + 1) % 2 === 0 && index !== filteredCharacters.length - 1) {
           cards.innerHTML += `<hr class="greenHr"/>`;
