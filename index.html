@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API de Rick and Morty</title>
+    <title>Rick and Morty API</title>
     <link rel="stylesheet" href="./index.css" />
     <link
       rel="stylesheet"
@@ -27,13 +27,13 @@
     </header>
     <main>
       <section>
-        <p id="api-title">API de Rick and Morty</p>
+        <p id="api-title">Rick and Morty API</p>
       </section>
       <section>
         <div class="container">
           <form onsubmit="search(event)">
             <div class="input-container">
-              <input type="text" id="search-bar" placeholder="   Pesquisar" />
+              <input type="text" id="search-bar" placeholder="   Research" />
               <button type="submit" id="btn-search">
                 <i class="bi bi-search custom-icon"></i>
               </button>
@@ -56,13 +56,13 @@
     <footer>
       <section>
         <ul class="footer-list">
-          <li>PERSONAGENS:</li>
-          <li>LOCALIZAÇÕES:</li>
-          <li>EPISÓDIOS:</li>
+          <li id="characters">CHARACTERS:</li>
+          <li id="locations">LOCATIONS:</li>
+          <li id="episodes">EPISODES:</li>
         </ul>
       </section>
       <section>
-        <p id="copyright">Desenvolvido por: <b>Marcele Cardozo</b> em 2023</p>
+        <p id="copyright">Developed by: <b>Marcele Cardozo</b> in 2023</p>
       </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

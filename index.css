@@ -118,6 +118,15 @@
   font-size: 20px;
 }
 
+.card p {
+  color: #BBBBBB;
+  font-size: 13px;
+}
+
+.card span {
+  font-size: 13px;
+}
+
 .greenHr {
   height: 2px;
   background-color: rgb(163, 230, 163);

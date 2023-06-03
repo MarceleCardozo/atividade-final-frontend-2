@@ -5,7 +5,7 @@ const api = axios.create({
 let currentPage = 1;
 let totalPages = 1;
 
-//busca na API do Rick and Morty com base no valor inserido no campo de pesquisa.
+// Search in the Rick and Morty API based on the value entered in the search bar.
 function search(event) {
   event.preventDefault();
 
@@ -39,19 +39,19 @@ function search(event) {
         }
 
         cards.innerHTML += `
-        <div class="card">
-          <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
-          <div>
-            <span class="title">${character.name}</span> 
-            <div class="statusColor ${statusColorClass}"></div> <!-- Add the statusColorClass to the div -->
-            <span>${character.status} - ${character.species}</span>
-            <p>Última localização conhecida</p>
-            <span>${character.location.name}</span>
-            <p>Visto a última vez em:</p>
-            <span>${character.episode}</span>
-          </div>
-        </div>
-      `;
+    <div class="card">
+      <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
+      <div>
+        <span class="title">${character.name}</span> 
+        <div class="statusColor ${statusColorClass}"></div>
+        <span>${character.status} - ${character.species}</span>
+        <p>Last known location:</p>
+        <span>${character.location.name}</span>
+        <p>Last seen on:</p>
+        <span>${character.episode.name}</span>
+      </div>
+    </div>
+  `;
 
         if ((index + 1) % 2 === 0 && index !== filteredCharacters.length - 1) {
           cards.innerHTML += `<hr class="greenHr"/>`;
@@ -60,11 +60,11 @@ function search(event) {
 
       console.log(filteredCharacters);
 
-      // Atualizar informações de paginação
+      // Update pagination information
       const pagination = response.data.info;
       totalPages = pagination.pages;
 
-      // Adicionar botões de paginação
+      // Add pagination buttons
       addPaginationButtons();
     })
     .catch((error) => {
@@ -76,18 +76,18 @@ function addPaginationButtons() {
   let paginationContainer = document.querySelector(".pagination-container");
   paginationContainer.innerHTML = "";
 
-  // Botão "Anterior"
+  // "Previous" button
   if (currentPage > 1) {
     let previousButton = document.createElement("button");
-    previousButton.textContent = "Anterior";
+    previousButton.textContent = "Previous";
     previousButton.addEventListener("click", goToPreviousPage);
     paginationContainer.appendChild(previousButton);
   }
 
-  // Botão "Próximo"
+  // "Next" button
   if (currentPage < totalPages) {
     let nextButton = document.createElement("button");
-    nextButton.textContent = "Próximo";
+    nextButton.textContent = "Next";
     nextButton.addEventListener("click", goToNextPage);
     paginationContainer.appendChild(nextButton);
   }
@@ -107,8 +107,8 @@ function goToNextPage() {
   }
 }
 
-// Carregar todos os personagens quando a página for carregada
+// Load all characters when the page is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM carregado");
+  console.log("DOM loaded");
   search(event);
 });
