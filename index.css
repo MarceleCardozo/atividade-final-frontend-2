@@ -70,7 +70,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 30px 70px;
+  padding: 30px 90px;
 }
 
 .card {
@@ -78,11 +78,12 @@
   align-items: flex-start;
   box-sizing: border-box;
   margin: 50px 0;
-  width: calc(50% - 20px);
+  width: calc(50% - 50px);
 }
 
 .card img {
   height: 130px;
+  border-radius: 5px;
 }
 
 .card div.informations {
@@ -142,10 +143,9 @@
 }
 
 .greenHr {
-  height: 2px;
+  height: 1px;
   background-color: rgb(163, 230, 163);
   border: none;
-  margin: 10px 0;
   width: 100%;
 }
 
