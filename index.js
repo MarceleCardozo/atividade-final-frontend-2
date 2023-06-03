@@ -41,14 +41,20 @@ function search(event) {
         cards.innerHTML += `
     <div class="card">
       <img src="https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg"/>
-      <div>
+      <div class="informations">
         <span class="title">${character.name}</span> 
-        <div class="statusColor ${statusColorClass}"></div>
-        <span>${character.status} - ${character.species}</span>
-        <p>Last known location:</p>
-        <span>${character.location.name}</span>
-        <p>Last seen on:</p>
-        <span>${character.episode.name}</span>
+        <div class="statusCharacter">
+          <div class="statusColor ${statusColorClass}"></div>
+          <div class="statusText">${character.status} - ${character.species}</div>
+        </div>
+        <div class="lastCharaterLocation">
+          <p>Last known location:</p>
+          <span>${character.location.name}</span>
+        </div>
+        <div>
+          <p>Last seen on:</p>
+          <span>${character.episode.name}</span>
+        </div>
       </div>
     </div>
   `;

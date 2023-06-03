@@ -73,43 +73,57 @@
   padding: 30px 70px;
 }
 
-.statusColor {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-}
-
-.green-status {
-  background-color: #56CD42;
-}
-
-.red-status {
-  background-color: #CD4242;
-}
-
-.gray-status {
-  background-color: #BBBBBB;
-}
-
 .card {
-  width: calc(50% - 20px);
-  margin-bottom: 50px;
-  margin-top: 50px;
-  box-sizing: border-box;
   display: flex;
   align-items: flex-start;
+  box-sizing: border-box;
+  margin: 50px 0;
+  width: calc(50% - 20px);
 }
 
 .card img {
   height: 130px;
 }
 
-.card div {
+.card div.informations {
+  margin-left: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 10px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.statusCharacter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.card div.statusText {
+  margin-left: 5px;
+  font-size: 11px;
+}
+
+.statusColor {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.lastCharaterLocation {
+  margin-bottom: 10px;
+}
+
+.green-status {
+  background-color: #56cd42;
+}
+
+.red-status {
+  background-color: #cd4242;
+}
+
+.gray-status {
+  background-color: #bbbbbb;
 }
 
 .card span.title {
@@ -119,12 +133,12 @@
 }
 
 .card p {
-  color: #BBBBBB;
-  font-size: 13px;
+  color: #bbbbbb;
+  font-size: 11px;
+  margin-bottom: -5px
 }
-
 .card span {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .greenHr {
