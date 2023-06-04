@@ -114,8 +114,28 @@ function goToNextPage() {
   }
 }
 
+//Makes a request to an API endpoint and returns the total number of items received.
+async function getTotalCount(endpoint) {
+  const response = await api.get(endpoint);
+  if (response.status === 200) {
+    return response.data.info.count;
+  } else {
+    console.log(response.error);
+    return 0;
+  }
+}
+
 // Load all characters when the page is loaded
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   console.log("DOM loaded");
+
+  const charactersCount = await getTotalCount("/character");
+  const locationsCount = await getTotalCount("/location");
+  const episodesCount = await getTotalCount("/episode");
+
+  document.getElementById("characters").textContent += ` ${charactersCount}`;
+  document.getElementById("locations").textContent += ` ${locationsCount}`;
+  document.getElementById("episodes").textContent += ` ${episodesCount}`;
+
   search(event);
 });
