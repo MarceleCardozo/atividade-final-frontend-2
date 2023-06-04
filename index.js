@@ -4,6 +4,7 @@ const api = axios.create({
 
 let currentPage = 1;
 let totalPages = 1;
+const cardsPerPage = 6; // Number of cards to display per page
 
 // Search in the Rick and Morty API based on the value entered in the search bar.
 async function search(event) {
@@ -25,6 +26,8 @@ async function search(event) {
     const filteredCharacters = response.data.results;
     let cards = document.querySelector(".containerCards");
     cards.innerHTML = "";
+
+    let cardCounter = 0; // Counter for the number of cards displayed
 
     for (const character of filteredCharacters) {
       const episodeNResponse = await axios.get(character.episode[0]);
@@ -65,6 +68,13 @@ async function search(event) {
         filteredCharacters.indexOf(character) !== filteredCharacters.length - 1
       ) {
         cards.innerHTML += `<hr class="greenHr"/>`;
+      }
+
+      cardCounter++;
+
+      // Break the loop if the maximum number of cards per page is reached
+      if (cardCounter >= cardsPerPage) {
+        break;
       }
     }
 
