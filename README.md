@@ -4,7 +4,7 @@ This is a web application that allows you to list and search for characters from
 
 ## Features
 
-- Display basic information (name, status, and species) for each character
+- Display basic information for each character
 - Show an image of each character
 - Implement pagination to navigate through the character list
 - Allow searching for characters based on name
@@ -31,10 +31,8 @@ The application uses the [Rick and Morty API](https://rickandmortyapi.com/) to r
 
 ## Credits
 
-This application was created by [Your Name]. It utilizes the [Rick and Morty API](https://rickandmortyapi.com/), developed by [Name of API Developer].
+This application was created by Marcele. It utilizes the [Rick and Morty API](https://rickandmortyapi.com/).
 
 ## License
-
-[Add license details here, if applicable]
 
 Feel free to use this code for personal or educational purposes. Contributions and improvements are welcome!
